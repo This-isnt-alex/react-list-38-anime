@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme (fallback) */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    /* AnimeSaturn-inspired dark theme */
+    --background: 215 25% 10%; /* #171b1f - main dark background */
+    --foreground: 37 15% 85%; /* #d9d1ca - light text */
+    --card: 215 20% 12%; /* Slightly lighter than background */
+    --card-foreground: 37 15% 85%;
+    --popover: 215 20% 12%;
+    --popover-foreground: 37 15% 85%;
+    --primary: 142 50% 45%; /* #56bf8d - green accent */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 215 15% 20%; /* Muted gray */
+    --secondary-foreground: 37 15% 85%;
+    --muted: 215 15% 20%;
+    --muted-foreground: 215 10% 60%;
+    --accent: 225 55% 50%; /* #5860c5 - blue accent */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 75% 55%; /* #c53239 - red accent */
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 15% 25%;
+    --input: 215 15% 20%;
+    --ring: 142 50% 45%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+}
+
+@layer components {
+  .anime-card {
+    @apply bg-card border border-border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary/50;
+  }
+
+  .episode-card {
+    @apply bg-card border border-border rounded-lg overflow-hidden hover:bg-accent/50 transition-colors duration-200;
+  }
+
+  .section-title {
+    @apply text-2xl font-semibold text-foreground mb-6;
+  }
+}
